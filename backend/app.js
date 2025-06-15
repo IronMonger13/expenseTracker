@@ -3,10 +3,10 @@ const cors = require("cors");
 const db = require("./db/db");
 const { readdirSync } = require("fs");
 
+// Initialising server
 const app = express();
 
 require("dotenv").config();
-
 const PORT = process.env.PORT;
 
 // middlewares
@@ -17,6 +17,7 @@ app.use(cors());
 readdirSync("./routes").map((route) => {
     app.use("/api/v1", require("./routes/" + route));
 });
+
 
 const server = () => {
     db();
