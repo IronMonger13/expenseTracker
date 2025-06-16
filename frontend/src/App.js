@@ -1,13 +1,23 @@
+import { useMemo, useState } from "react";
 import styled from "styled-components";
 import bg from "./img/bg.png";
 import { MainLayout } from "./Styles/Layouts";
 import Orb from "./Components/Orb/Orb";
+import Navigation from "./Components/Navigation/Navigation";
 
 function App() {
+    const [active, setActive] = useState(1);
+
+    const orbMemo = useMemo(() => {
+        return <Orb></Orb>;
+    }, []);
+
     return (
         <AppStyled bg={bg} className="App">
-            <Orb></Orb>
-            <MainLayout></MainLayout>
+            {orbMemo}
+            <MainLayout>
+                <Navigation active={active} setActive={setActive}></Navigation>
+            </MainLayout>
         </AppStyled>
     );
 }
