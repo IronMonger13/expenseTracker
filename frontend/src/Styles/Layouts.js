@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const MainLayout = styled.div`
     padding: 2rem;
@@ -7,6 +7,4 @@ export const MainLayout = styled.div`
     gap: 2rem;
 `;
 
-export const InnerLayout = styled.div`
-    
-`;
+export const InnerLayout = styled.div``;
